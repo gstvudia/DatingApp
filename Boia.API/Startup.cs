@@ -29,7 +29,7 @@ namespace Boia.API
         {
             services.AddDbContext<Context>(connection => connection.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
-            
+            services.AddCors();   
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +43,8 @@ namespace Boia.API
            //app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(cors => cors.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseAuthorization();
 
