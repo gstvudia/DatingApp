@@ -8,5 +8,6 @@ namespace Boia.API.Data
         public Context(DbContextOptions options) : base(options){}
 
         public DbSet<Values> Values { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
