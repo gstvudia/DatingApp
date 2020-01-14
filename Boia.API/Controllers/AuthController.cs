@@ -55,7 +55,6 @@ namespace Boia.API.Controllers
             //validate request
             //Verificar o token, tem que ser encripted com https
 
-
             var userFromRepo = await _authRepository.Login(userForLoginDTO.Username, userForLoginDTO.Password);
 
             if(userFromRepo == null)
